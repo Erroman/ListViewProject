@@ -4,17 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListViewProject"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <x:Array x:Key="stringSource" Type="sys:String">
+            <sys:String>Alef</sys:String>
+            <sys:String>Bet</sys:String>
+            <sys:String>Gimel</sys:String>
+            <sys:String>Dalet</sys:String>
+            <sys:String>He</sys:String>
+            <sys:String>Vav</sys:String>
+            <sys:String>Zayim</sys:String>
+            <sys:String>Chet</sys:String>
+            <sys:String>Tet</sys:String>
+            <sys:String>Yod</sys:String>
+            <sys:String>Kaf</sys:String>
+            <sys:String>Khaf</sys:String>
+
+
+        </x:Array>
+    </Window.Resources>
     <Grid>
-        <ListView Margin="283,118,283,117">
+        <ListView x:Name="hebrewAlphabet" Margin="283,118,283,117" ItemsSource="{Binding Source={StaticResource stringSource}}" SelectedIndex="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="98,0,0,0" VerticalAlignment="Center" Width="77" Height="34"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="98,0,0,0" VerticalAlignment="Center" Width="77" Height="34" Click="Button_Click"/>
 
 
     </Grid>
